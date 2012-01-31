@@ -1,0 +1,134 @@
+    /////  ////// /////
+   //  //    //  //
+  //  //    //    ///
+ //  //    //       //
+/////     //   //////
+
+THE DEVICE TELEMETRY STACK
+
+==============================================================================
+
+Copyright:
+
+    Copyright (c) 2010-12 UC Regents
+
+License:
+
+    BSD License
+
+==============================================================================
+
+TABLE OF CONTENTS
+
+1. OVERVIEW
+3. INITIATIVE
+3. COLLABORATION
+4. LICENSE
+5. CREDITS
+
+==============================================================================
+
+1. OVERVIEW
+
+The Device Telemetry Stack is a software application that exposes telemetry
+about a visitor such as browser capabilities, device size and user agent
+information. For client-side programming, it does this through the dts 
+Javascript object. Further, it includes functionality to deliver this 
+information server-side as well if desired.
+
+==============================================================================
+
+2. INITIATIVE
+
+The Device Telemetry Stack is part of the Mobile Web Framework (MWF) initiative.
+
+The MWF initiative began in early 2010 when the UCLA Office of Information
+Technology and UCLA Communications began development of a framework to reach
+all campus mobile users via a single platform in a reasonable and cost-
+effective manner without imposing any restrictions on server-side environments
+or requiring the central aggregation of data.
+
+The MWF went into production at the beginning of Fall 2010 with the launch of 
+UCLA Mobile. Two release versions later, the MWF is now used in production by 
+more than ten units at UCLA, as well as by six other campuses in the UC system.
+A number of other institutions both in the UC and beyond are also currently 
+involved in the initiative.
+
+At first, the MWF used user agent sniffing to determine device capabilities.
+However, user agent sniffing did not accurately reflect all device capabilities,
+simultaneously introducing maintenance challenges in maintaining the metadata
+related to these user agents. As such, MWF 1.2 introduced a client-side method
+for determining device capabilities and offloading them back server-side.
+This new strategy greatly improved the reliability of the Mobile Web Framework 
+in addressing device-by-device differences both client-side and server-side.
+
+Borne of a desire to provide this capability beyond even the Mobile Web
+Framework, the Device Telemetry Stack is a standalone application that provides
+this same range of functionality.
+
+More information about the MWF is available online at http://mwf.ucla.edu
+
+==============================================================================
+
+3. COLLABORATION
+
+For information directly related to the Device Telemetry Stack:
+
+    Code Repository     https://github.com/ebollens/dts
+
+    Documentation       ...coming soon...
+
+    Issue Tracker       https://github.com/ebollens/dts/issues
+
+To get involved with the broader MWF initiative:
+
+    Home                http://mwf.ucla.edu
+
+    Code Repository     https://github.com/ucla/mwf
+
+    Documentation       https://github.com/ucla/mwf/wiki
+
+    Documentation       https://github.com/ucla/mwf/issues
+
+Questions may also be directed to mwf@ucla.edu.
+
+==============================================================================
+
+4. LICENSE
+
+The UCLA Mobile Web Framework is open-source software licensed under the
+BSD license. The full text of the license may be found in the LICENSE file.
+
+==============================================================================
+
+5. CREDITS
+
+5.1. PROJECT
+
+    Project Lead        Rose Rocchio 
+                        rrocchio@oit.ucla.edu
+
+    Development Lead    Eric Bollens 
+                        ebollens@oit.ucla.edu
+
+5.2. CONTRIBUTORS
+
+Several participants have contributed directly to the Device Telemetry Stack:
+
+    UC Los Angeles      Eric Bollens
+                        Ed Sakabu
+                        Nate Emerson
+
+    UC San Diego        Ike Lin
+
+    UC San Francisco    Richard Trott
+
+Beyond direct contributions, the input and suggestions of numerous others
+have made the Device Telemetry Stack possible.
+
+5.3. THIRD-PARTY APPLICATIONS
+
+The Device Telemetry Stack leverages third-party applications to make available
+some of its functionality:
+
+    Modernizr - http://www.modernizr.com - MIT & BSD Licenses
