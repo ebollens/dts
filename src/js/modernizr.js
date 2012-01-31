@@ -816,26 +816,6 @@ window.Modernizr = (function(window,document,undefined){
 
 
     /**
-     * Addtest allows the user to define their own feature tests
-     * the result will be added onto the Modernizr object,
-     * as well as an appropriate className set on the html element
-     * 
-     * @param feature - String naming the feature
-     * @param test - Function returning true if feature is supported, false if not
-     */
-    ret.addTest = function (feature, test) {
-      feature = feature.toLowerCase();
-      
-      if (ret[ feature ]) {
-        return; // quit if you're trying to overwrite an existing test
-      } 
-      test = !!(test());
-      docElement.className += ' ' + (test ? '' : 'no-') + feature; 
-      ret[ feature ] = test;
-      return ret; // allow chaining.
-    };
-
-    /**
      * Reset m.style.cssText to nothing to reduce memory footprint.
      */
     set_css( '' );
