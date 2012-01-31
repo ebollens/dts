@@ -27,20 +27,6 @@ require_once(dirname(dirname(__FILE__)).'/src/lib.php');
 header('Content-Type: text/javascript');
 
 /**
- * Instantiate the DTS object.
+ * Instantiate and render the DTS object via the DTS_Instance static utility.
  */
-$dts = new DTS();
-
-/**
- * Add Javascript libraries to the DTS object.
- */
-$dts->add('core.js');
-$dts->add('capability.js');
-$dts->add('browser.js');
-$dts->add('userAgent.js');
-$dts->add('screen.js');
-
-/**
- * Generate Javascript output based on libraries added to the DTS object.
- */
-echo $dts->render();
+echo DTS_Instance::render();
