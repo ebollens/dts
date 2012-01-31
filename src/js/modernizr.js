@@ -18,6 +18,7 @@
  *      - Removal of addTest function
  *      - Removal of IEPP functionality
  *      - Removal of body class writing from tests
+ *      - Addition of Modernizr.test to perform on-demand testing
  *      
  * All other Modernizr functionality is left in tact.
  *      
@@ -839,6 +840,9 @@ window.Modernizr = (function(window,document,undefined){
     // Assign private properties to the return object with prefix
     ret._enableHTML5     = enableHTML5;
     ret._version         = version;
+    
+    // Add test object to ret for on-demand testing via Modernizr object
+    ret.test            = tests;
     
     return ret;
 
