@@ -26,7 +26,8 @@ class DTS_Dependency
      * @var array string=>array(string) 
      */
     private static $_dependencies = array(
-        'capability.js' => array('modernizr.js')
+        'capability.js' => array('modernizr.js'),
+        'screen.js'     => array('userAgent.js', 'browser.js')
     );
     
     /**
