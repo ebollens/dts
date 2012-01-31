@@ -1,5 +1,5 @@
 /**
- * Definition of the dst.server object responsible for managing data persistence
+ * Definition of the dts.server object responsible for managing data persistence
  * between telemetry gathered client-side and the server-side application.
  * 
  * @author      Eric Bollens
