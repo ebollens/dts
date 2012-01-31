@@ -37,6 +37,7 @@ $dts = new DTS();
 $dts->add('core.js');
 $dts->add('modernizr.js');
 $dts->add('browser.js');
+$dts->add('userAgent.js');
 
 /**
  * Generate Javascript output based on libraries added to the DTS object.
