@@ -28,7 +28,8 @@ class DTS_Dependency
     private static $_dependencies = array(
         'capability.js'     =>  array('modernizr.js'),
         'screen.js'         =>  array('userAgent.js', 'browser.js'),
-        'server.js'         =>  array('site.js', 'browser.js')
+        'server.js'         =>  array('site.js', 'browser.js'),
+        'federation.php'    =>  array('server.js')
     );
     
     /**
