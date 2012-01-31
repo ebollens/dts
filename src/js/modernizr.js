@@ -824,13 +824,6 @@ window.Modernizr = (function(window,document,undefined){
     // Assign private properties to the return object with prefix
     ret._enableHTML5     = enableHTML5;
     ret._version         = version;
-
-    // Remove "no-js" class from <html> element, if it exists:
-    docElement.className = docElement.className.replace(/\bno-js\b/,'') 
-                            + ' js '
-
-                            // Add the new classes to the <html> element.
-                            + classes.join( ' ' );
     
     return ret;
 
