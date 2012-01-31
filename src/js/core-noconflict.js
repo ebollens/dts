@@ -5,7 +5,7 @@
  * library already uses _, then this version may be used instead.
  * 
  * @author      Eric Bollens
- * @copyright   Copyright (c) 2010-11 UC Regents
+ * @copyright   Copyright (c) 2012 UC Regents
  * @license     BSD
  * @version     20120130
  */
