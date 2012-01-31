@@ -803,22 +803,6 @@ window.Modernizr = (function(window,document,undefined){
 
     // End of test definitions
     // -----------------------
-
-
-
-    // Run through all tests and detect their support in the current UA.
-    // todo: hypothetically we could be doing an array of tests and use a basic loop here.
-    for ( var feature in tests ) {
-        if ( hasOwnProperty( tests, feature ) ) {
-            // run the test, throw the return value into the Modernizr,
-            //   then based on that boolean, define an appropriate className
-            //   and push it into an array of classes we'll join later.
-            featurename  = feature.toLowerCase();
-            ret[ featurename ] = tests[ feature ]();
-
-            classes.push( ( ret[ featurename ] ? '' : 'no-' ) + featurename );
-        }
-    }
     
     // input tests need to run.
     if (!ret.input) webforms();
