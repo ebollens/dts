@@ -1,5 +1,5 @@
 /**
- * Core definition of the dts object with the alias _.
+ * Core definition of the dts object.
  * 
  * @author      Eric Bollens
  * @copyright   Copyright (c) 2012 UC Regents
@@ -7,4 +7,4 @@
  * @version     20120130
  */
 
-var dts = {}, _ = dts;
+var dts = {};
