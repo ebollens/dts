@@ -19,6 +19,7 @@
  *      - Removal of IEPP functionality
  *      - Removal of body class writing from tests
  *      - Addition of Modernizr.test to perform on-demand testing
+ *      - Define Modernizr object in dts._Modernizr
  *      
  * All other Modernizr functionality is left in tact.
  *      
@@ -45,7 +46,7 @@
  * @contributor   Ben Alman
  */
 
-window.Modernizr = (function(window,document,undefined){
+dts._Modernizr = (function(window,document,undefined){
     
     var version = '1.7',
 

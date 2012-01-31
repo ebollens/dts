@@ -35,7 +35,7 @@ $dts = new DTS();
  * Add Javascript libraries to the DTS object.
  */
 $dts->add('core.js');
-$dts->add('modernizr.js');
+$dts->add('capability.js');
 $dts->add('browser.js');
 $dts->add('userAgent.js');
 $dts->add('screen.js');
