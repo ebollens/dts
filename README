@@ -132,3 +132,4 @@ The Device Telemetry Stack leverages third-party applications to make available
 some of its functionality:
 
     Modernizr - http://www.modernizr.com - MIT & BSD Licenses
+    jsmin.php - https://github.com/rgrove/jsmin-php - MIT License
