@@ -10,6 +10,21 @@
  * Dual-licensed under the BSD or MIT licenses.
  * http://www.modernizr.com/license/
  */
+
+/**
+ * Modernizr modifications for the Device Telemetry Stack include:
+ * 
+ *      - Removal of test evaluation
+ *      - Removal of addTest function
+ *      - Removal of IEPP functionality
+ *      - Removal of body class writing from tests
+ *      
+ * All other Modernizr functionality is left in tact.
+ *      
+ * @author      Eric Bollens
+ * @license     BSD
+ * @version     20120130
+ */
  
 /*
  * Modernizr is a script that detects native CSS3 and HTML5 features
