@@ -15,6 +15,7 @@
  * Define domain property for dts.federation by mutating $_SERVER['HTTP_HOST'].
  * 
  * @todo dts.federation.domain needs to be made configurable
+ * @todo can this be pulled out into its own script so js.php can be cached?
  */
 $domain = $_SERVER['HTTP_HOST'];
 
