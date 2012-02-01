@@ -5,7 +5,7 @@
  * @author      Eric Bollens
  * @copyright   Copyright (c) 2011-12 UC Regents
  * @license     BSD
- * @version     20120131
+ * @version     20120201
  * 
  * @requires    dts.browser
  * @requires    dts.site
