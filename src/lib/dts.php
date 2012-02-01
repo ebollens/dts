@@ -122,7 +122,7 @@ class DTS
      */
     public function get_path($name = '')
     {
-        $path = $this->_path.'/'.str_replace('_', '/', $name);
+        $path = $this->_path.'/'.$name;
         return file_exists($path) ? $path : false;
     }
 }
