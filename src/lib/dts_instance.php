@@ -30,6 +30,7 @@ class DTS_Instance
         $dts->add('screen.js');
         $dts->add('server.js');
         $dts->add('federation.php');
+        $dts->add('server/screen.js');
         
         return $dts->render();
     }

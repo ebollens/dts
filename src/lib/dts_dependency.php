@@ -7,7 +7,7 @@
  * @author      Eric Bollens
  * @copyright   Copyright (c) 2012 UC Regents
  * @license     BSD
- * @version     20120131
+ * @version     20120201
  */
 
 /**
@@ -28,6 +28,7 @@ class DTS_Dependency
     private static $_dependencies = array(
         'capability.js'     =>  array('modernizr.js'),
         'screen.js'         =>  array('userAgent.js', 'browser.js'),
+        'server/screen.js'  =>  array('server.js', 'screen.js'),
         'server.js'         =>  array('site.js', 'browser.js'),
         'federation.php'    =>  array('server.js')
     );
