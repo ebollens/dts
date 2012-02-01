@@ -15,7 +15,8 @@
 
 dts.server = new function(){
     
-    var modules = {};
+    var prefix = 'd_', // do not change without changing DTS_Cookie::PREFIX
+        modules = {};
     
     this.savePath = false;
     
@@ -61,6 +62,32 @@ dts.server = new function(){
         
         if(reload)
             document.location.reload();
+        
+    }
+    
+    this.hasCookie = function(cookieName){
+        
+        if(this.isSameOrigin()){
+            cookieName = prefix+cookieName;
+            var cookies = document.cookie.split(/[; ]+/);
+            for(var i = 0; i < cookies.length; i++)
+                if(cookies[i].substring(0, cookies[i].indexOf('=')) == cookieName)
+                    return true;
+            return false;
+        }else{
+            return dts.federation.cookies.indexOf("|"+cookieName+"|") != -1;
+        }
+        
+    }
+    
+    this.setCookie = function(cookieName, cookieContent){
+        
+        if(!this.isSameOrigin())
+            return false;
+        
+        document.cookie = prefix + cookieName + '=' + encodeURIComponent(cookieContent)+';path=/';
+        
+        return true;
         
     }
     
