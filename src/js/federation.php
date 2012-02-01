@@ -8,9 +8,14 @@
  * @author      Eric Bollens
  * @copyright   Copyright (c) 2011-12 UC Regents
  * @license     BSD
- * @version     20120131
+ * @version     20120201
  */
 
+/**
+ * Define domain property for dts.federation by mutating $_SERVER['HTTP_HOST'].
+ * 
+ * @todo dts.federation.domain needs to be made configurable
+ */
 $domain = $_SERVER['HTTP_HOST'];
 
 if(($i = strpos($domain, '://')) !== false)
@@ -27,8 +32,23 @@ if(($i = strpos($domain, ':')) !== false)
 if(substr($domain, 0, 1) == '.')
     $domain = substr($domain, 1);
 
+/**
+ * Define script property for dts.federation.
+ * 
+ * @todo dts.federation.script needs to be made configurable
+ */
 $script = 'dts/www/passthru.php';
 
-echo 'dts.federation = { '
+/**
+ * Define cookies property for dts.federation.
+ */
+$cookies = '|'.implode('|', DTS_Cookie::get_all_names()).'|';
+
+/**
+ * Output dts.federation object definition with calculated values.
+ */
+echo 'dts.federation = {'
         .'domain:"'.$domain.'", '
-        .'script:"'.$script.'"};';
+        .'script:"'.$script.'", '
+        .'cookies:"'.$cookies.'", '
+        .'};';
