@@ -1,6 +1,6 @@
 dts.server.screen = new function(){
     
-    var cookieName = 'scr';
+    var cookieName = 'sc';
     
     this.isset = function(){
         

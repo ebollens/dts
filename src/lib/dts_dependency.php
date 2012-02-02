@@ -29,6 +29,7 @@ class DTS_Dependency
         'capability.js'     =>  array('modernizr.js'),
         'screen.js'         =>  array('userAgent.js', 'browser.js'),
         'server/screen.js'  =>  array('server.js', 'screen.js'),
+        'server/useragent.js'  =>  array('server.js', 'useragent.js'),
         'server.js'         =>  array('site.js', 'browser.js'),
         'federation.php'    =>  array('server.js')
     );

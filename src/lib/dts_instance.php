@@ -25,10 +25,11 @@ class DTS_Instance
         
         $dts->add('capability.js');
         $dts->add('browser.js');
-        $dts->add('userAgent.js');
+        $dts->add('useragent.js');
         $dts->add('screen.js');
         $dts->add('server.js');
         $dts->add('server/screen.js');
+        $dts->add('server/useragent.js');
         
         return $dts->render();
     }
