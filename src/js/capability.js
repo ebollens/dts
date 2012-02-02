@@ -288,7 +288,7 @@ dts.capability=new function(){
      * @return bool
      */
     this.video = function(){
-        return !! _m.video;
+        return !! _m.test.video;
     }
     
     /**
