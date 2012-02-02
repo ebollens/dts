@@ -11,7 +11,7 @@
  * @author      Richard Trott
  * @copyright   Copyright (c) 2011-12 UC Regents
  * @license     BSD
- * @version     20120130
+ * @version     20120201
  * 
  * @requires    dts
  * @requires    dts._Modernizr
@@ -234,7 +234,7 @@ dts.capability=new function(){
      * 
      * @return bool
      */
-    this.event = _m.test.hasEvent;
+    this.event = _m.hasEvent;
     
     /**
      * Determine if the device browser supports HTML 5 flexible box model.
