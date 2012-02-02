@@ -12,6 +12,19 @@
  */
 
 /**
+ * Require the DTS library file.
+ */
+require_once(dirname(dirname(__FILE__)).'/src/lib.php');
+
+/**
+ * Set document headers. Cache expires immediately as state may change within
+ * federated source at any time.
+ */
+header('Content-Type: text/javascript');
+header("Expires: Wed, 11 Jan 1984 05:00:00 GMT");
+header('Content-Type: text/javascript');
+
+/**
  * Define domain property for dts.federation by mutating $_SERVER['HTTP_HOST'].
  * 
  * @todo dts.federation.domain needs to be made configurable
@@ -51,5 +64,5 @@ $cookies = '|'.implode('|', DTS_Cookie::get_all_names()).'|';
 echo 'dts.federation = {'
         .'domain:"'.$domain.'", '
         .'script:"'.$script.'", '
-        .'cookies:"'.$cookies.'", '
+        .'cookies:"'.$cookies.'"'
         .'};';

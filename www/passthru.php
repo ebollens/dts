@@ -34,6 +34,7 @@ if(isset($_GET['mode']) && $_GET['mode'] == 'standards')
 if(isset($_GET['return']))
 {
     echo DTS_Instance::render();
+    echo 'dts.execute();';
     echo 'window.location = "'.$_GET['return'].'"';
 }
 

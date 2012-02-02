@@ -93,7 +93,7 @@ dts.server = new function(){
     
     this.isSameOrigin = function(){
         
-        if(typeof dts.federation.domain == 'undefined')
+        if(typeof dts.federation == 'undefined')
             return true;
         
         return dts.federation.domain == dts.site.getDomain();
