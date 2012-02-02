@@ -150,13 +150,15 @@ BSD license. The full text of the license may be found in the LICENSE file.
 The Device Telemetry Stack is principally written & maintained by Eric Bollens
 from the UCLA Office of Information Technology.
 
+5.3. CONTRIBUTORS
+
 Contributions have also been made by Ed Sakabu (UCLA), Nate Emerson (UCLA), 
 Ike Lin (UCSD) and Richard Trott (UCSF).
 
 Beyond direct contributions, the input and suggestions of numerous others in
 the MWF initiative and elsewhere have made the Device Telemetry Stack possible.
 
-5.3. THIRD-PARTY APPLICATIONS
+5.4. THIRD-PARTY APPLICATIONS
 
 The Device Telemetry Stack leverages third-party applications to make available
 some of its functionality:
