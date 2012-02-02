@@ -10,7 +10,7 @@ THE DEVICE TELEMETRY STACK
 
 Copyright:
 
-    Copyright (c) 2010-12 UC Regents
+    Copyright (c) 2011-12 UC Regents
 
 License:
 
@@ -30,17 +30,49 @@ TABLE OF CONTENTS
 
 1. OVERVIEW
 
-The Device Telemetry Stack is a software application that exposes telemetry
-about a visitor such as browser capabilities, device size and user agent
-information. For client-side programming, it does this through the dts 
-Javascript object. Further, it includes functionality to deliver this 
-information server-side as well if desired.
+The Device Telemetry Stack (DTS) is a software application that exposes 
+telemetry about a visitor client-side and optionally server-side.
+
+(1) At the most basic level, it provides a set of Javascript libraries that 
+    expose browser capabilities, device size and user agent information.
+
+(2) Beyond client-side functionality, however, it provides Javascript libraries
+    that pass this information via a cookie for server-side processing. This
+    sort of processing is complicated by the fact that a cookie is not available
+    server-side on first load, so DTS includes logic to solve this problem. 
+    Consequently, server-side logic may assume the presence of DTS cookies.
+
+(3) A step beyond basic server-side exposure, DTS supports exposing this 
+    telemetry to some third-party server besides the hostname of the requested
+    page. This is done by configuring federation.php to provide an external
+    location for the passthru.php file, the hostname of which will be provided
+    with the data derived by DTS.
+
+DTS was initially motivated by the Mobile Web Framework (MWF), which required
+real-time information about a device server-side. Because the MWF is built to
+run on one server, while apps that use it may run on other servers, it thus
+required the support for exposure of DTS information to a third-party host.
+
+However, recognizing that not all users desire all grades of functionality, DTS
+is built under a stack architecture whereby some components may be included 
+while excluding others.
+
+Further, as not all web environments operate under PHP, DTS is built to allow
+for js.php and passthru.php to be pre-rendered command-line and then provided
+as static Javascript files. Unfortunately, federation.php requires real-time
+server-side information, but given its simple nature, this could be trivially
+ported into other languages.
+
+As DTS is currently UNDER DEVELOPMENT, it should likely not be used in a
+production environment at this time. However, as an open-source project,
+contributions are greatly encouraged, as some telemetry portions of DTS still
+require significant work.
 
 ==============================================================================
 
 2. INITIATIVE
 
-The Device Telemetry Stack is part of the Mobile Web Framework (MWF) initiative.
+The Device Telemetry Stack is part of the MWF initiative.
 
 The MWF initiative began in early 2010 when the UCLA Office of Information
 Technology and UCLA Communications began development of a framework to reach
@@ -50,23 +82,25 @@ or requiring the central aggregation of data.
 
 The MWF went into production at the beginning of Fall 2010 with the launch of 
 UCLA Mobile. Two release versions later, the MWF is now used in production by 
-more than ten units at UCLA, as well as by six other campuses in the UC system.
-A number of other institutions both in the UC and beyond are also currently 
-involved in the initiative.
+more than ten units at UCLA, as well as six higher-ed institutions, while 
+several others are also actively involved with and contributing to the 
+initiative.
 
 At first, the MWF used user agent sniffing to determine device capabilities.
 However, user agent sniffing did not accurately reflect all device capabilities,
 simultaneously introducing maintenance challenges in maintaining the metadata
-related to these user agents. As such, MWF 1.2 introduced a client-side method
-for determining device capabilities and offloading them back server-side.
-This new strategy greatly improved the reliability of the Mobile Web Framework 
-in addressing device-by-device differences both client-side and server-side.
+related to these user agents. 
+
+As such, MWF 1.2 introduced a client-side method for determining device 
+capabilities and providing them back to the server on first page load. This new 
+strategy greatly improved the reliability of the Mobile Web Framework in 
+addressing device-by-device differences both client-side and server-side.
 
 Borne of a desire to provide this capability beyond even the Mobile Web
-Framework, the Device Telemetry Stack is a standalone application that provides
-this same range of functionality.
+Framework, the Device Telemetry Stack is a standalone, open-source application 
+that provides this same range of functionality.
 
-More information about the MWF is available online at http://mwf.ucla.edu
+More information about the MWF initiative is available at http://mwf.ucla.edu
 
 ==============================================================================
 
@@ -111,20 +145,16 @@ BSD license. The full text of the license may be found in the LICENSE file.
     Development Lead    Eric Bollens 
                         ebollens@oit.ucla.edu
 
-5.2. CONTRIBUTORS
+5.2. AUTHOR
 
-Several participants have contributed directly to the Device Telemetry Stack:
+The Device Telemetry Stack is principally written & maintained by Eric Bollens
+from the UCLA Office of Information Technology.
 
-    UC Los Angeles      Eric Bollens
-                        Ed Sakabu
-                        Nate Emerson
+Contributions have also been made by Ed Sakabu (UCLA), Nate Emerson (UCLA), 
+Ike Lin (UCSD) and Richard Trott (UCSF).
 
-    UC San Diego        Ike Lin
-
-    UC San Francisco    Richard Trott
-
-Beyond direct contributions, the input and suggestions of numerous others
-have made the Device Telemetry Stack possible.
+Beyond direct contributions, the input and suggestions of numerous others in
+the MWF initiative and elsewhere have made the Device Telemetry Stack possible.
 
 5.3. THIRD-PARTY APPLICATIONS
 
