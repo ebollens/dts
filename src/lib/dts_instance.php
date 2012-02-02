@@ -31,6 +31,7 @@ class DTS_Instance
         $dts->add('server.js');
         $dts->add('server/screen.js');
         $dts->add('server/useragent.js');
+        $dts->add('server/classification.js');
         
         return $dts->render();
     }

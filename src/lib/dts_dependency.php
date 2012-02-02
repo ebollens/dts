@@ -26,13 +26,14 @@ class DTS_Dependency
      * @var array string=>array(string) 
      */
     private static $_dependencies = array(
-        'capability.js'         =>  array('modernizr.js'),
-        'classification.js'     =>  array('screen.js', 'capability.js'),
-        'screen.js'             =>  array('userAgent.js', 'browser.js'),
-        'server/screen.js'      =>  array('server.js', 'screen.js'),
-        'server/useragent.js'   =>  array('server.js', 'useragent.js'),
-        'server.js'             =>  array('site.js', 'browser.js'),
-        'federation.php'        =>  array('server.js')
+        'capability.js'             =>  array('modernizr.js'),
+        'classification.js'         =>  array('screen.js', 'capability.js'),
+        'screen.js'                 =>  array('userAgent.js', 'browser.js'),
+        'server/screen.js'          =>  array('server.js', 'screen.js'),
+        'server/useragent.js'       =>  array('server.js', 'useragent.js'),
+        'server/classification.js'  =>  array('server.js', 'classification.js'),
+        'server.js'                 =>  array('site.js', 'browser.js'),
+        'federation.php'            =>  array('server.js')
     );
     
     /**
