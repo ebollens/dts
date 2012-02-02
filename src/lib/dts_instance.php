@@ -23,13 +23,11 @@ class DTS_Instance
     {
         $dts = new DTS();
         
-        $dts->add('core.js');
         $dts->add('capability.js');
         $dts->add('browser.js');
         $dts->add('userAgent.js');
         $dts->add('screen.js');
         $dts->add('server.js');
-        $dts->add('federation.php');
         $dts->add('server/screen.js');
         
         return $dts->render();

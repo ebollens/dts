@@ -56,14 +56,17 @@ class DTS
     }
     
     /**
-     * Add a Javascipt library file by $js to the DTS object.
+     * Add a Javascipt library file by $js to the DTS object. This will not
+     * allow loading of core files or loading of the same file twice, and will
+     * load any dependencies necessary.
      * 
      * @param string $js
+     * @uses DTS_Dependency
      * @return bool 
      */
     public function add($js)
     {
-        if(self::has($js))
+        if(self::has($js) || strpos($js, 'core/') === 0)
             return;
         
         if($dependencies = DTS_Dependency::get($js))
@@ -84,6 +87,17 @@ class DTS
     public function render()
     {
         ob_start();
+        
+        if($path = $this->get_path('core/dts.js'))
+        {
+            include($path);
+        }
+        else
+        {
+            ob_end_clean();
+            throw new DTS_Library_Exception('File core/dts.js does not exist');
+        }
+        
         foreach($this->_js as $js)
         {
             if($path = $this->get_path($js))
@@ -97,7 +111,16 @@ class DTS
             }
         }
         
-        echo 'dts.execute();';
+        if($path = $this->get_path('core/execute.js'))
+        {
+            include($path);
+        }
+        else
+        {
+            ob_end_clean();
+            throw new DTS_Library_Exception('File core/execute.js does not exist');
+        }
+        
         $contents = ob_get_contents();
         ob_end_clean();
         
