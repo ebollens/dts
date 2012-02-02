@@ -24,6 +24,7 @@ class DTS_Instance
         $dts = new DTS();
         
         $dts->add('capability.js');
+        $dts->add('classification.js');
         $dts->add('browser.js');
         $dts->add('useragent.js');
         $dts->add('screen.js');
