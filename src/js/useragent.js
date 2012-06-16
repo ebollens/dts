@@ -136,16 +136,4 @@ dts.userAgent = new function(optionalUAString) {
         
         return '';
     }
-    
-    /**
-     * Determines the web browser engine version from string or else returns an 
-     * empty string.
-     *
-     * @return string
-     */
-    this.getBrowserEngineVersion = function(){
-        var re = new RegExp(this.getBrowserEngine()+"/([\\d\\.]+)");
-        var result = re.exec(userAgent);
-        return result!=null ? result[1] : ''; 
-    }
 };

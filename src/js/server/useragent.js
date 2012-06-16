@@ -19,8 +19,7 @@ dts.server.userAgent = new function(){
             fns = {'getOS':'o',
                    'getOSVersion':'ov',
                    'getBrowser':'b',
-                   'getBrowserEngine':'e',
-                   'getBrowserEngineVersion':'ev'};
+                   'getBrowserEngine':'e'};
                      
         for(var fn in fns){
             if(userAgent.hasOwnProperty(fn)){
