@@ -87,7 +87,7 @@ dts.browser = new function() {
      * @return int
      */
     this.posRight = function(){
-        return dts.browser.posLeft() + dts.browser.pageWidth();
+        return this.posLeft() + this.pageWidth();
     }
     
     /**
