@@ -34,8 +34,21 @@ if(isset($_GET['mode']) && $_GET['mode'] == 'standards')
 if(isset($_GET['return']))
 {
     echo DTS_Instance::render();
-    echo 'dts.execute();';
-    echo 'window.location = "'.$_GET['return'].'"';
+    ?>
+        
+    dts.execute();
+    
+    var regex = new RegExp("[\\?&]return=([^&#]*)");
+    var results = regex.exec(window.location.search);
+    if(results != null){
+        var loc = decodeURIComponent(results[1].replace(/\+/g, " "));
+        if(loc.indexOf('?') == -1) loc += "?";
+        if(loc.indexOf('?') < loc.length-1) loc += "&";
+        loc += dts.server.loopProtector;
+        window.location = loc;
+    }
+    
+    <?php
 }
 
         

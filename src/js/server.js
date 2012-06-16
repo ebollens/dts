@@ -5,7 +5,7 @@
  * @author      Eric Bollens
  * @copyright   Copyright (c) 2011-12 UC Regents
  * @license     BSD
- * @version     20120201
+ * @version     20120616
  * 
  * @requires    dts.browser
  * @requires    dts.site
@@ -17,6 +17,8 @@ dts.server = new function(){
     
     var prefix = 'd_', // do not change without changing DTS_Cookie::PREFIX
         modules = {};
+        
+    this.loopProtector = 'no_server_init';
     
     this.savePath = false;
     
@@ -46,7 +48,7 @@ dts.server = new function(){
             
             if(this.test(module) === false){
                 
-                if(!this.isSameOrigin()){
+                if(!this.isSameOrigin() && !this.isLoopProtected()){
                     
                     window.location = '//'+dts.federation.domain+'/'+dts.federation.script+'?return='+encodeURIComponent(window.location)+'&mode='+dts.browser.getMode();
                   
@@ -60,8 +62,14 @@ dts.server = new function(){
             
         }
         
-        if(reload)
-            document.location.reload();
+        if(reload && !this.isLoopProtected()){
+            var locArr = window.location.href.split('#'), loc = locArr[0];
+            if(loc.indexOf('?') == -1) loc += "?";
+            if(loc.indexOf('?') < loc.length-1) loc += "&";
+            loc += this.loopProtector;
+            locArr[0] = loc;
+            window.location = locArr.join('#');
+        }
         
     }
     
@@ -97,6 +105,10 @@ dts.server = new function(){
             return true;
         
         return dts.federation.domain == dts.site.getDomain();
+    }
+    
+    this.isLoopProtected = function(){
+        return (new RegExp(".*[\?&]"+this.loopProtector+"([\=\&].*)?")).test(window.location.search);
     }
     
 };
