@@ -19,13 +19,13 @@ dts.screen = new function() {
     var ws = window.screen;
     
     /**
-     * Bug in Android 2.2-3 prevents it from returning accurate screen 
+     * Bug in Android 2.2-2.3, 4.0 prevents it from returning accurate screen 
      * dimensions, so bypass inaccurate values with false instead.
      * 
-     * @compat Android 2.2-3
+     * @compat Android 2.2-2.2, 4.0
      */
     var version = dts.userAgent.getOSVersion();
-    if(typeof dts.userAgent !== 'undefined' && dts.userAgent.getOS() == 'android' && (version.indexOf('2.2') == 0 || version.indexOf('2.3') == 0)) {
+    if(dts.userAgent.getOS() == 'android' && (version.indexOf('2.2') == 0 || version.indexOf('2.3') == 0 || version.indexOf('4.0'))) {
         ws = {width:false,height:false}
     }
     
