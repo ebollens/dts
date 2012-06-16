@@ -11,7 +11,7 @@
  * @author      Richard Trott
  * @copyright   Copyright (c) 2011-12 UC Regents
  * @license     BSD
- * @version     20120201
+ * @version     20120616
  * 
  * @requires    dts
  * @requires    dts._Modernizr
