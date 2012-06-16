@@ -237,13 +237,6 @@ dts.capability=new function(){
     this.event = _m.hasEvent;
     
     /**
-     * Determine if the device browser supports HTML 5 flexible box model.
-     * 
-     * @return bool
-     */
-    this.flexbox = _m.test.flexbox;
-    
-    /**
      * Determine if the device browser supports inline SVG.
      * 
      * @return bool
