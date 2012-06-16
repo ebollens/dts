@@ -115,7 +115,7 @@ dts.capability=new function(){
             _cookie = (navigator.cookieEnabled && typeof document.cookie != 'undefined') ? true : false
             if (!_cookie){ 
                 document.cookie= 'dts';
-                _cookie = (document.cookie.indexOf('dts') != -1) ? true : false;
+                _cookie = (document.cookie.indexOf('dts=') != -1) ? true : false;
             }
         }
         return _cookie;
